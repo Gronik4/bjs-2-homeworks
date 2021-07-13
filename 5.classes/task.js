@@ -109,7 +109,7 @@ class Student {
         let allSumm = 0;
         let size = this.subjects.size;
         for(let item of this.subjects) { 
-            let avarage = this.getAverageBySubject(item[0]);alert(item[0] + ' and ' + avarage);
+            let avarage = this.getAverageBySubject(item[0]);
             allSumm += avarage;
         }
         return (allSumm/size).toFixed(1)*1;
