@@ -19,7 +19,7 @@ class Triangle {
         this.sideC = sideC;
         this.array = [this.sideA, this.sideB, this.sideC];
         this.arr = this.array.sort((a, b) => b-a);
-        if(this.arr[0] > this.arr[1] + this.arr[2]) {alert('Сработало');
+        if(this.arr[0] > this.arr[1] + this.arr[2]) {
             throw new Error('Треугольник с такими сторонами не существует'); 
         }
     }
