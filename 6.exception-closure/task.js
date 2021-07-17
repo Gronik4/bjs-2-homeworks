@@ -19,13 +19,12 @@ class Triangle {
         this.sideC = sideC;
         this.array = [this.sideA, this.sideB, this.sideC];
         this.arr = this.array.sort((a, b) => b-a);
+        if(this.arr[0] > this.arr[1] + this.arr[2]) {alert('Сработало');
+            throw new Error('Треугольник с такими сторонами не существует'); 
+        }
     }
     getPerimeter(){
-        if(this.arr[0] > this.arr[1] + this.arr[2]) {
-            throw new Error('Треугольник с такими сторонами не существует');
-        } else {
-            return this.arr[0] + this.arr[1] + this.arr[2];
-        } 
+            return this.arr[0] + this.arr[1] + this.arr[2]; 
     }
     getArea() {
         const half = this.getPerimeter()/2;
@@ -37,11 +36,12 @@ class Figure {
     getPerimeter() {return 'Ошибка! Треугольник не существует';}
     getArea() {return 'Ошибка! Треугольник не существует'}
 }
+
 function getTriangle(a, b, c) {
     try{
         return new Triangle(a, b, c);
     }
     catch(error) {
-        return new Figure;
+        return new Figure();
     }
 }
