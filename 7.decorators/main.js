@@ -18,3 +18,13 @@ setTimeout(upgradedSendSignal(),1200);
 setTimeout(upgradedSendSignal(),2300);
 setTimeout(upgradedSendSignal(),4400);
 setTimeout(upgradedSendSignal(),4500);
+
+const sendSignal1 = () => console.log('Сигнал послан 2'); 
+const upgradedSendSignal1 = debounceDecorator2(sendSignal1,2000);
+setTimeout(upgradedSendSignal1()); 
+setTimeout(upgradedSendSignal1(),300); 
+setTimeout(upgradedSendSignal1(),900); 
+setTimeout(upgradedSendSignal1(),1200);
+setTimeout(upgradedSendSignal1(),2300);
+setTimeout(upgradedSendSignal1(),4400);
+setTimeout(upgradedSendSignal1(),4500);
