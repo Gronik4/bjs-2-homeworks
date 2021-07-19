@@ -39,11 +39,13 @@ function debounceDecoratorNew(func, ms) {
 
 function debounceDecorator2(func, ms) {
   // Ваш код
-  let isThrottled = false, savedArgs, savedThis, count = [];
+  let isThrottled = false, savedArgs, savedThis, count = 0;
   function wrapper(...args){
+    
     savedArgs = args;
     savedThis = this;
-    count.push(args); 
+    count += 1; 
+    save = [count];
 
     if(isThrottled){return;}
     func.apply(this, savedArgs);
@@ -52,7 +54,7 @@ function debounceDecorator2(func, ms) {
     setTimeout(() => {
       isThrottled = false;
       func.apply(savedThis, savedArgs);
-      console.log('Количество вызовов: ' + count.length);
+      console.log('Количество вызовов: ' + save);
     }, ms);  
   }
   return wrapper;
